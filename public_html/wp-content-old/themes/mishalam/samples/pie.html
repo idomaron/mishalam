@@ -1,0 +1,155 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Radar Chart</title>
+		<script src="../Chart.js"></script>
+		<script src="../jquery-1.10.2.min.js"></script>
+		<meta name = "viewport" content = "initial-scale = 1, user-scalable = no">
+		<style>
+			canvas{
+			}
+		</style>
+	</head>
+	<body>
+		<canvas id="canvas" height="450" width="450"></canvas>
+<select id="user-keys">
+	<option value="">none</option>
+</select>
+<select id="user-values"></select>
+
+	<script>
+	var colors=['#C0C0C0','#FF00FF','#00FFFF','#FFFF00','#0000FF','#00FF00','#FF0000','#000000'];
+//FROM PHP:
+	var answers={100:'likud',200:'avoda',300:'merez'};
+
+	var votes={};   //votes[meta_value_id]=[userId, userId...]
+	votes[100]=[1,2,3,4];
+	votes[200]=[5,6,7,8];
+	votes[300]=[9,10,11,12];
+
+	var usersData={};
+	usersData[1]={gender:'',location:'TA'};
+	usersData[2]={gender:'female',location:'haifa'};
+	usersData[3]={gender:'female',location:'jerusalem'};
+	usersData[4]={gender:'male',location:'TA'};
+	usersData[5]={gender:'male',location:'jerusalem'};
+	usersData[6]={gender:'female',location:'haifa'};
+	usersData[7]={gender:'female',location:'jerusalem'};
+	usersData[8]={gender:'male',location:'TA'};
+	usersData[9]={gender:'female',location:'jerusalem'};
+	usersData[10]={gender:'female',location:'jerusalem'};
+	usersData[11]={gender:'female',location:'TA'};
+	usersData[12]={gender:'female',location:'TA'};
+//FROM PHP---END
+	var answersColors = assignColors();
+	var usersMetaKnV = {};
+
+	function buildSelectKey(){
+		
+		for(var u in usersData){
+			for (var k in usersData[u]){
+				if(!usersMetaKnV[k]){ 
+					usersMetaKnV[k]=[]; 
+				}
+				if(usersMetaKnV[k].indexOf(usersData[u][k]) > -1){}//do nothing
+				else if(usersData[u][k]){
+					usersMetaKnV[k].push(usersData[u][k]);		
+				}				
+			}		
+		}
+		for(var k in usersMetaKnV){
+			$('#user-keys').append('<option value="'+k+'">'+k+'</option>');
+		}
+	}
+	function assignColors(){
+		var i=0;
+		var ansCol = {};
+		for(var a in answers){
+			ansCol[a]=colors[i];
+			i++;
+		}
+		console.log(ansCol);
+		return ansCol;
+	}
+
+	function buildChart(type,mKey,mVal){
+		console.log(type+'---'+mKey+'---'+mVal);
+		var totalNum = 0;
+		var votesCount={};
+		//get total number
+		if(mVal){
+			for(var a in votes){ //a=answer
+				votesCount[a]=0;
+				for(var u in votes[a]){
+					console.log(votes[a][u]);
+					if(usersData[votes[a][u]][mKey]==mVal){
+						votesCount[a]++;
+						totalNum++;
+					}
+				}
+			}
+		}else{
+			for(var a in votes){
+				votesCount[a]=votes[a].length;
+				totalNum += votes[a].length;
+			}
+		}
+		var pieData=[];
+		console.log(votesCount);
+		console.log(totalNum);
+		for(var a in votesCount){
+			var obj = {
+				value: votesCount[a]/totalNum,
+				color: answersColors[a]
+			};
+			pieData.push(obj);
+		}
+		console.log(pieData)
+		
+
+		/*var pieData = [
+				{
+					value: 30,
+					color:"#F38630"
+				},
+				{
+					value : 50,
+					color : "#E0E4CC"
+				},
+				{
+					value : 100,
+					color : "#69D2E7"
+				}
+			
+			];
+*/
+
+		if(type=='pie'){
+			var myPie = new Chart(document.getElementById("canvas").getContext("2d")).Pie(pieData);		
+		}else{
+			var myPie = new Chart(document.getElementById("canvas").getContext("2d")).Line(pieData);		
+		}
+		
+	}
+
+	
+	$(function(){
+		buildSelectKey();
+		buildChart('pie');
+		$('#user-keys').on('change',function(){
+			var key = $(this).val();
+			console.log(usersMetaKnV);
+			$.each(usersMetaKnV[key],function(i,v){
+				$('#user-values').html();
+				$('#user-values').append('<option value="'+v+'">'+v+'</option>');
+				$('#user-values').attr('data-key',key);
+			});
+		});
+		$('#user-values').on('change',function(){
+			alert('yo');
+			buildChart('pie',$(this).attr('data-key'),$(this).val());
+		});
+	});
+	</script>
+	</body>
+</html>

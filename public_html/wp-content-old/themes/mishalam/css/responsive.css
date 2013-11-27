@@ -1,0 +1,584 @@
+/*!
+ * Bootstrap Responsive v2.2.1
+ *
+ * Copyright 2012 Twitter, Inc
+ * Licensed under the Apache License v2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Designed and built with all the love in the world @twitter by @mdo and @fat.
+ */
+
+.clearfix {
+  *zoom: 1;
+}
+
+.clearfix:before,
+.clearfix:after {
+  display: table;
+  line-height: 0;
+  content: "";
+}
+
+.clearfix:after {
+  clear: both;
+}
+
+.hide-text {
+  font: 0/0 a;
+  color: transparent;
+  text-shadow: none;
+  background-color: transparent;
+  border: 0;
+}
+
+.input-block-level {
+  display: block;
+  width: 100%;
+  min-height: 30px;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.hidden {
+  display: none;
+  visibility: hidden;
+}
+
+.visible-phone {
+  display: none !important;
+}
+
+.visible-tablet {
+  display: none !important;
+}
+
+.hidden-desktop {
+  display: none !important;
+}
+
+.visible-desktop {
+  display: inherit !important;
+}
+@media (min-width: 768px) and (max-width: 979px) {
+  .hidden-desktop {
+    display: inherit !important;
+  }
+  .visible-desktop {
+    display: none !important ;
+  }
+  .visible-tablet {
+    display: inherit !important;
+  }
+  .hidden-tablet {
+    display: none !important;
+  }
+}
+
+@media (max-width: 767px) {
+  .hidden-desktop {
+    display: inherit !important;
+  }
+  .visible-desktop {
+    display: none !important;
+  }
+  .visible-phone {
+    display: inherit !important;
+  }
+  .hidden-phone {
+    display: none !important;
+  }
+  .footersingle ul {
+	  display:none;
+  }
+  .container {
+	  padding:0 10px;
+  }
+}
+@media (max-width: 979px) {
+	.container {
+		width:940px;
+	}
+	.txtimg {
+		float: right;
+		margin-right: 16px;
+		padding-top: 26px;
+		width: 230px;
+	}
+	.iconarealo {
+		width:110px;
+	}
+	.leftbox {
+		width:226px;
+	}
+	.rightbox {
+		width:226px;
+	}
+	.bigbannerarea {
+		width:462px;
+		margin-right:-231.5px;
+	}
+}
+@media (max-width: 959px) {
+	.container {
+		width:724px;
+	}
+	.logoportion {
+		padding-bottom: 10px;
+		padding-top: 15px;
+		width: 120px;
+	}
+	.txtimg {
+		padding-top: 20px;
+   		width: 160px;
+	}
+	.navarea {
+		width:410px;
+	}
+	.dropdown {
+		margin-top:20px;
+		width:180px;
+	}
+	.facebookicon {
+		padding-top:30px;
+	}
+	.droparea {
+		top: 50px;
+    	width: 186px;
+	}
+	.links {
+		padding-top:33px;
+	}
+	.iconarealo {
+		width:90px;
+	}
+	.leftbox {
+		width:171px;
+	}
+	.rightbox {
+		width:171px;
+	}
+	.bigbannerarea {
+		width:356px;
+		margin-right:-178.5px;
+	}
+	.marquarea {
+		padding:15px 0;
+	}
+	.marquecover {
+		top:16px;
+	}
+	.iconsectioninner {
+		padding:0px;
+	}
+	.iconsection {
+		padding:30px 0;
+	}
+	.smallimgsection {
+		margin-bottom:30px;
+	}
+	.lowerlink {
+		padding:20px 10px 0 10px;
+	}
+	.footersection {
+		padding-top:20px;
+	}
+	.lowerlogoarea {
+		padding:25px 10px 0;
+	}
+	.text1 {
+		overflow:hidden;
+		padding:10px;
+		font-size:12px;
+		line-height:15px;
+	}
+	.iconarea {
+		padding-left:5px;
+	}
+	.txtright .txt2 {
+		padding:0 10px;
+		font-size:18px;
+	}
+	.iconareabig {
+		padding-left:15px;
+	}
+	.bannericon {
+		top:85px;
+	}
+}
+@media (max-width: 767px) {
+	.menubtn {
+		display:block;
+	}
+	.container {
+		width:620px;
+		padding:0 10px
+	}
+	.navarea {
+		display:none;
+		position:absolute;
+		background-color:#53666e;
+		left:0;
+		top:101px;
+		float:none;
+		width:84%;
+		box-shadow:3px 3px 8px rgba(0, 0, 0, .80);
+		z-index:4;
+	}
+	.logoportion {
+		padding-bottom: 10px;
+		padding-top: 15px;
+		width: auto;
+	}
+	.txtimg {
+		padding-top: 20px;
+   		width: auto;
+	}
+	.droparea{
+		width:auto;
+		background-color:transparent;
+		border-radius:0;
+		-moz-border-radius:0;
+		-webkit-border-radius:0;
+		top:auto;
+		position:relative;
+		display:block;
+		right:auto;
+		padding:0;
+	}
+	.dropdown {
+		background-color:transparent;
+		border:0;
+		border-radius:0;
+		-moz-border-radius:0;
+		-webkit-border-radius:0;
+		height:auto;
+		margin-top:0;
+		float:none;
+		width:auto;
+		position:relative;
+		color:#53666e;
+		font-size:15px;
+		line-height:normal;
+		padding-right:0;
+	}
+	.dropdown:after{
+		display:none;
+	}
+	.links{
+		float:none;
+		padding-top:0;
+		padding-right:0;
+	}
+	.facebookicon {
+		float:none;
+		padding:19px 29px 19px 0;
+		border-bottom:1px solid #a9b3b7;
+	}
+	.facebookicon .fb{
+		float:none;
+	}
+	.linksandicon {
+		float:none;
+		width:auto;
+	}
+	.dropdown span {
+		display:none;
+	}
+	.links ul li{
+		float:none;
+		background-image:none;
+		list-style:none;
+		display:block;
+		padding:0;
+		border-bottom:1px solid #a9b3b7;
+	}
+	.links ul li a{
+		color:#ffffff;
+		font-size:26px;
+		line-height:88px;
+		padding:0 37px;
+	}
+	.links ul li a:hover{
+		text-decoration:none;
+	}
+	.links ul li:hover{
+		background-color:#00a1e4;
+	}
+	.droparea:after {
+		display:none;
+	}
+	.links ul{
+		float:none;
+	}
+	.droparea ul li {
+		border-top:1px solid #a9b3b7;
+	}
+	.droparea ul li:first-child {
+		border-top:0;
+	}
+	.droparea ul li a{
+		line-height:88px;
+		color:#ffffff;
+		font-size:26px;
+		padding:0 37px;
+	}
+	.header {
+		margin-bottom:0;
+		background-image:none;
+		padding-bottom:0;
+	}
+	.facebookicon .fb img{
+		width:auto;
+		height:auto;
+	}
+	.bodyshadow {
+		display:block;
+	}
+	.leftbox {
+		float:none;
+		width:auto;
+		overflow:hidden;
+		margin:0 -6.5px;
+	}
+	.rightbox {
+		float:none;
+		width:auto;
+		overflow:hidden;
+		margin:0 -6.5px;
+	}
+	.imagbox {
+		float:right;
+		width:50%;
+	}
+	.imgboxinner img{
+		width:100%;
+	}
+	.imageboxouter {
+		width:50%;
+		margin-bottom:13px;
+	}
+	.iconarealo {
+		width:154px;
+		margin-bottom:25px;
+	}
+	.bigbannerarea {
+		margin-right: 0;
+		right: 0;
+		width: 100%;
+		top:0;
+	}
+	.bigbannerarea img{
+		width:100%;
+	}
+	.maintopsection {
+		padding-top:91%;
+	}
+	.txtimgbig img{
+		width:auto;
+	}
+	.resbox {
+		margin:0 6.5px;
+	}
+	.imagbox {
+	}
+	.resbox img {
+		width:100%;		
+	}
+	.txtright .txt2 {
+		font-size: 28px;
+		padding: 0 20px;
+	}
+	.text1 {
+		font-size: 16px;
+		line-height: 18px;
+		padding: 12px 11px;
+	}
+	.iconarea {
+		padding: 11px 0 0 11px;
+	}
+	.marqeeouter {
+		position:absolute;
+		top:600px;
+		left:0;
+		width:100%;
+	}
+	.lowerlink {
+		padding:0 5px;
+	}
+	.lowerlink ul li{
+		list-style:none;
+		display:block;
+		font-size:11px;
+		color:#53666e;
+		line-height:26px;
+	}
+	.lowerlink ul li a{
+		font-size:11px;
+		color:#53666e;
+		line-height:26px;
+	}
+	.lowerlogoarea {
+		padding-top:10px;
+	}
+	.logotxt {
+		font-size:11px;
+	}
+	.marquecover {
+		width:110px;
+	}
+	.bannericon {
+		top: 230px;
+	}
+}
+@media (max-width: 639px) {
+	.container {
+		width:auto;
+	}
+	/*.maintopsection {
+		padding-top:97%;
+	}*/
+	/*.marqeeouter {
+		top:554px;
+	}*/
+	.menubtn {
+		border-radius: 6px;
+		float: left;
+		margin-top: 10px;
+		padding: 3%;
+		padding-bottom:2%;
+	}
+	.txtimg {
+		width:40%;
+	}
+	.logoportion {
+		width:30%;
+	}
+	.menubtn span {
+		width:32px;
+	}
+	.menubtn {
+		margin-top:12px;
+	}
+	.txtright .txt2 {
+		font-size: 18px;
+		padding: 0 10px;
+	}
+	.txtimgbig {
+		padding-right:10px;
+		padding-top:12px;
+	}
+	.iconareabig {
+		padding-left:10px;
+	}
+	.text1 {
+		font-size:11px;
+		line-height: 14px;
+		padding:3px 6px;
+	}
+	.text1 br{
+		display:none;
+	}
+	.iconarea {
+		padding:11px 0 0 6px;
+	}
+	.bannericon {
+		top:46%;
+	}
+	.marqeeouter {
+		display:none;
+	}
+	.maintopsection {
+		padding-top:81%;
+	}
+	.footerinner {
+		width:50%;
+		min-height: inherit;
+		text-align:center;
+	}
+	.footerinner:first-child {
+		width:100%;
+		min-height:100px;
+	}
+	.lowerlink {
+		min-height:inherit;
+		margin-bottom:15px;
+	}
+	.footerinner:nth-child(2) .lowerlink {
+		border:0;
+	}
+	.footerinner:nth-child(4) .lowerlink {
+		border:0;
+	}
+	.smallimgsection {
+		margin-bottom:0;
+	}
+	.logotxt {
+		text-align:center;
+	}
+	.header {
+		height:101px;
+	}
+	.navarea {
+		top:101px;
+	}
+	.links ul li a {
+		font-size:16px;
+		line-height:40px;
+		padding:0 12px;
+	}
+	.droparea ul li a {
+		font-size:16px;
+		line-height:40px;
+		padding:0 12px;
+	}
+	.facebookicon{
+		padding:10px 12px 10px 0;
+	}
+	.facebookicon .fb img {
+		width:85px;
+		height:23px;
+	}
+}
+@media (max-width: 479px) {
+	.bannericon {
+		top:30%;
+	}
+	.maintopsection {
+		padding-top:82%;
+	}
+	.header {
+		height:84px;
+	}
+	.navarea {
+		top:84px;
+	}
+}
+@media (max-width: 359px) {
+	/*.marqeeouter {
+		top:525px;
+	}*/
+	.maintopsection {
+		padding-top:83%;
+	}
+	.iconarealo {
+		width:150px;
+	}
+	.bannericon {
+		top:20%;
+	}
+	.header {
+		height:70px;
+	}
+	.navarea {
+		top:70px;
+	}
+}
+@media only screen and (max-width: 320px) {
+	.header {
+		height:64px;
+	}
+	.navarea {
+		top:64px;
+	}
+}

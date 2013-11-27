@@ -1,0 +1,557 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: WP-Members v2.8.7\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: 2013-11-25 18:18:10+0000\n"
+"Last-Translator: admin <ido@sola.co.il>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: CSL v1.x\n"
+"X-Poedit-Language: Hebrew\n"
+"X-Poedit-Country: ISRAEL\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_n:1,2;__ngettext_noop:1,2;_n_noop:1,2;_c,_nc:4c,1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2;\n"
+"X-Poedit-Basepath: ../\n"
+"X-Poedit-Bookmarks: \n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Textdomain-Support: yes"
+
+#: admin/admin.php:59
+#: admin/admin.php:128
+#@ default
+#@ wp-members
+msgid "Settings"
+msgstr ""
+
+#: admin/admin.php:188
+#@ wp-members
+msgid "Options"
+msgstr ""
+
+#: admin/admin.php:189
+#@ wp-members
+msgid "Fields"
+msgstr ""
+
+#: admin/admin.php:190
+#@ wp-members
+msgid "Dialogs"
+msgstr ""
+
+#: admin/admin.php:191
+#@ wp-members
+msgid "Emails"
+msgstr ""
+
+msgid "Your WP settings allow anyone to register - this is not the recommended setting."
+msgstr ""
+
+#, php-format
+msgid "You can %s change this here %s making sure the box next to \"Anyone can register\" is unchecked."
+msgstr ""
+
+msgid "This setting allows a link on the /wp-login.php page to register using the WP native registration process thus circumventing any registration you are using with WP-Members. In some cases, this may suit the users wants/needs, but most users should uncheck this option. If you do not change this setting, you can choose to ignore these warning messages under WP-Members Settings."
+msgstr ""
+
+msgid "Your WP settings allow anyone to comment - this is not the recommended setting."
+msgstr ""
+
+#, php-format
+msgid "You can %s change this here %s by checking the box next to \"Users must be registered and logged in to comment.\""
+msgstr ""
+
+msgid "This setting allows any users to comment, whether or not they are registered. Depending on how you are using WP-Members will determine whether you should change this setting or not. If you do not change this setting, you can choose to ignore these warning messages under WP-Members Settings."
+msgstr ""
+
+msgid "Your WP settings allow full text rss feeds - this is not the recommended setting."
+msgstr ""
+
+#, php-format
+msgid "You can %s change this here %s by changing \"For each article in a feed, show\" to \"Summary.\""
+msgstr ""
+
+msgid "Leaving this set to full text allows anyone to read your protected content in an RSS reader. Changing this to Summary prevents this as your feeds will only show summary text."
+msgstr ""
+
+msgid "You have set WP-Members to hold registrations for approval"
+msgstr ""
+
+msgid "but you have not changed the default message for \"Registration Completed\" under \"WP-Members Dialogs and Error Messages.\"  You should change this message to let users know they are pending approval."
+msgstr ""
+
+msgid "You have set WP-Members to turn off the registration process"
+msgstr ""
+
+msgid "but you also set to moderate and/or email admin new registrations.  You will need to set up a registration page for users to register."
+msgstr ""
+
+msgid "You have turned on reCAPTCHA"
+msgstr ""
+
+msgid "but you have not entered API keys.  You will need both a public and private key.  The CAPTCHA will not display unless a valid API key is included."
+msgstr ""
+
+msgid "Version:"
+msgstr ""
+
+msgid "Quick Start Guide"
+msgstr ""
+
+msgid "Online User Guide"
+msgstr ""
+
+msgid "FAQs"
+msgstr ""
+
+msgid "Thank you for using WP-Members"
+msgstr ""
+
+msgid "A plugin developed by"
+msgstr ""
+
+msgid "Follow"
+msgstr ""
+
+msgid "Latest from RocketGeek"
+msgstr ""
+
+msgid "Latest from ButlerBlog"
+msgstr ""
+
+msgid "Need help?"
+msgstr ""
+
+msgid "Manage reCAPTCHA Options"
+msgstr ""
+
+msgid "reCAPTCHA is a free, accessible CAPTCHA service that helps to digitize books while blocking spam on your blog."
+msgstr ""
+
+#, php-format
+msgid "reCAPTCHA asks commenters to retype two words scanned from a book to prove that they are a human. This verifies that they are not a spambot while also correcting the automatic scans of old books. So you get less spam, and the world gets accurately digitized books. Everybody wins! For details, visit the %s reCAPTCHA website%s"
+msgstr ""
+
+msgid "reCAPTCHA Keys"
+msgstr ""
+
+#, php-format
+msgid "reCAPTCHA requires an API key, consisting of a \"public\" and a \"private\" key. You can sign up for a %s free reCAPTCHA key%s"
+msgstr ""
+
+msgid "Public Key"
+msgstr ""
+
+msgid "Private Key"
+msgstr ""
+
+msgid "Choose Theme"
+msgstr ""
+
+msgid "WP-Members"
+msgstr ""
+
+msgid "Red"
+msgstr ""
+
+msgid "White"
+msgstr ""
+
+msgid "Black Glass"
+msgstr ""
+
+msgid "Clean"
+msgstr ""
+
+msgid "Custom"
+msgstr ""
+
+msgid "Optional"
+msgstr ""
+
+msgid "Update reCAPTCHA Settings"
+msgstr ""
+
+msgid "reCAPTCHA was updated for WP-Members"
+msgstr ""
+
+msgid "Restricted post (or page), displays above the login/registration form"
+msgstr ""
+
+msgid "Username is taken"
+msgstr ""
+
+msgid "Email is registered"
+msgstr ""
+
+msgid "Registration completed"
+msgstr ""
+
+msgid "User update"
+msgstr ""
+
+msgid "Passwords did not match"
+msgstr ""
+
+msgid "Password changes"
+msgstr ""
+
+msgid "Username or email do not exist when trying to reset forgotten password"
+msgstr ""
+
+msgid "Password reset"
+msgstr ""
+
+msgid "Dialogs and Error Messages"
+msgstr ""
+
+#, php-format
+msgid "You can customize the text for dialogs and error messages. Simple HTML is allowed %s etc."
+msgstr ""
+
+msgid "Terms of Service (TOS)"
+msgstr ""
+
+msgid "Update Dialogs"
+msgstr ""
+
+msgid "WP-Members dialogs were updated"
+msgstr ""
+
+msgid "New Registration"
+msgstr ""
+
+msgid "Registration is Moderated"
+msgstr ""
+
+msgid "Registration is Moderated, User is Approved"
+msgstr ""
+
+msgid "Password Reset"
+msgstr ""
+
+msgid "Admin Notification"
+msgstr ""
+
+msgid "Email Signature"
+msgstr ""
+
+msgid "Email Messages"
+msgstr ""
+
+msgid "You can customize the content of the emails sent by the plugin."
+msgstr ""
+
+msgid "A list of shortcodes is available here."
+msgstr ""
+
+msgid "Set a custom email address"
+msgstr ""
+
+msgid "(optional)"
+msgstr ""
+
+msgid "Set a custom email name"
+msgstr ""
+
+msgid "Subject"
+msgstr ""
+
+msgid "Body"
+msgstr ""
+
+msgid "Update Emails"
+msgstr ""
+
+msgid "WP-Members emails were updated"
+msgstr ""
+
+msgid "WP-Members fields were updated"
+msgstr ""
+
+msgid "Field Label is required for adding a new field. Nothing was updated."
+msgstr ""
+
+msgid "Option Name is required for adding a new field. Nothing was updated."
+msgstr ""
+
+msgid "Checked value is required for checkboxes. Nothing was updated."
+msgstr ""
+
+msgid "field was added"
+msgstr ""
+
+msgid "field was updated"
+msgstr ""
+
+msgid "Edit Field"
+msgstr ""
+
+msgid "Add a Field"
+msgstr ""
+
+msgid "Field Label"
+msgstr ""
+
+msgid "The name of the field as it will be displayed to the user."
+msgstr ""
+
+msgid "Option Name"
+msgstr ""
+
+msgid "The database meta value for the field. It must be unique and contain no spaces (underscores are ok)."
+msgstr ""
+
+msgid "Field Type"
+msgstr ""
+
+msgid "text"
+msgstr ""
+
+msgid "textarea"
+msgstr ""
+
+msgid "checkbox"
+msgstr ""
+
+msgid "dropdown"
+msgstr ""
+
+msgid "password"
+msgstr ""
+
+msgid "Display?"
+msgstr ""
+
+msgid "Required?"
+msgstr ""
+
+msgid "Additional information for checkbox fields"
+msgstr ""
+
+msgid "Checked by default?"
+msgstr ""
+
+msgid "Stored value if checked:"
+msgstr ""
+
+msgid "Additional information for dropdown fields"
+msgstr ""
+
+msgid "For dropdown, array of values:"
+msgstr ""
+
+msgid "Options should be Option Name|option_value,"
+msgstr ""
+
+msgid "Visit plugin site for more information"
+msgstr ""
+
+msgid "Add Field"
+msgstr ""
+
+msgid "Manage Fields"
+msgstr ""
+
+msgid "Determine which fields will display and which are required.  This includes all fields, both native WP fields and WP-Members custom fields."
+msgstr ""
+
+msgid "(Note: Email is always mandatory. and cannot be changed.)"
+msgstr ""
+
+msgid "Add/Delete"
+msgstr ""
+
+msgid "Checked?"
+msgstr ""
+
+msgid "Edit"
+msgstr ""
+
+msgid "Users Screen"
+msgstr ""
+
+msgid "Delete"
+msgstr ""
+
+msgid "(Email cannot be removed)"
+msgstr ""
+
+msgid "native"
+msgstr ""
+
+msgid "Update Fields"
+msgstr ""
+
+msgid "Manage Options"
+msgstr ""
+
+msgid "Block Posts by default"
+msgstr ""
+
+msgid "Note: Posts can still be individually blocked or unblocked at the article level"
+msgstr ""
+
+msgid "Block Pages by default"
+msgstr ""
+
+msgid "Note: Pages can still be individually blocked or unblocked at the article level"
+msgstr ""
+
+msgid "Show excerpts"
+msgstr ""
+
+msgid "Shows excerpted content above the login/registration on both Posts and Pages"
+msgstr ""
+
+msgid "Notify admin"
+msgstr ""
+
+msgid "Sends email to admin for each new registration?"
+msgstr ""
+
+msgid "Moderate registration"
+msgstr ""
+
+msgid "Holds new registrations for admin approval"
+msgstr ""
+
+msgid "Use reCAPTCHA"
+msgstr ""
+
+msgid "Turns on CAPTCHA for registration"
+msgstr ""
+
+msgid "Turn off registration"
+msgstr ""
+
+msgid "Turns off the registration process, only allows login"
+msgstr ""
+
+msgid "Legacy forms"
+msgstr ""
+
+msgid "Uses the pre-2.5.1 table-based forms (leave off to use CSS table-less forms)"
+msgstr ""
+
+msgid "Time-based expiration"
+msgstr ""
+
+msgid "Allows for access to expire"
+msgstr ""
+
+msgid "Trial period"
+msgstr ""
+
+msgid "Allows for a trial period"
+msgstr ""
+
+msgid "Ignore warning messages"
+msgstr ""
+
+msgid "Ignores WP-Members warning messages in the admin panel"
+msgstr ""
+
+msgid "Attribution"
+msgstr ""
+
+msgid "Attribution is appreciated!  Display \"powered by\" link on register form?"
+msgstr ""
+
+msgid "User Profile Page:"
+msgstr ""
+
+msgid "custom URL:"
+msgstr ""
+
+msgid "Register Page:"
+msgstr ""
+
+msgid "Stylesheet:"
+msgstr ""
+
+msgid "Select a stylesheet or specify a custom stylesheet below"
+msgstr ""
+
+msgid "Custom Stylesheet:"
+msgstr ""
+
+msgid "Auto Excerpt:"
+msgstr ""
+
+msgid "Number of words in excerpt:"
+msgstr ""
+
+msgid "Automatically creates an excerpt"
+msgstr ""
+
+msgid "Update Settings"
+msgstr ""
+
+msgid "WP-Members settings were updated"
+msgstr ""
+
+msgid "Select a page"
+msgstr ""
+
+msgid "USE CUSTOM URL ---->"
+msgstr ""
+
+msgid "Activated?"
+msgstr ""
+
+msgid "Subscription"
+msgstr ""
+
+msgid "Expires"
+msgstr ""
+
+msgid "Registered"
+msgstr ""
+
+msgid "IP"
+msgstr ""
+
+msgid "Yes"
+msgstr ""
+
+msgid "No"
+msgstr ""
+
+msgid "WP-Members Additional Fields"
+msgstr ""
+
+msgid "Activate this user?"
+msgstr ""
+
+msgid "Reactivate this user?"
+msgstr ""
+
+msgid "Deactivate this user?"
+msgstr ""
+
+msgid "IP @ registration"
+msgstr ""
+
+msgid "Activate"
+msgstr ""
+
+msgid "Export"
+msgstr ""
+
+msgid "Export All Users"
+msgstr ""
+
+#, php-format
+msgid "Please indicate that you agree to the %s TOS %s"
+msgstr ""
+
+msgid "Additional Info"
+msgstr ""
+
+msgid "Indicates a required field"
+msgstr ""
+

@@ -1,0 +1,19 @@
+<?php
+/**
+ * The template for displaying survey's promo
+ */
+?>
+
+<article id="post-<?php the_ID(); ?>" <?php post_class(); ?> style="border: solid 3px blue; margin:5px;">
+	<div style="color:red;">main servey >> this should be styled according to the design</div>
+	<header class="entry-header">
+		<h1 class="entry-title">
+			<a href="<?php echo esc_url( twentythirteen_get_link_url() ); ?>"><?php the_title(); ?></a>
+		</h1>
+	</header><!-- .entry-header -->
+
+	<div class="entry-content">
+		<?php the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'twentythirteen' ) ); ?>
+		<?php wp_link_pages( array( 'before' => '<div class="page-links"><span class="page-links-title">' . __( 'Pages:', 'twentythirteen' ) . '</span>', 'after' => '</div>', 'link_before' => '<span>', 'link_after' => '</span>' ) ); ?>
+	</div><!-- .entry-content -->
+</article><!-- #post -->

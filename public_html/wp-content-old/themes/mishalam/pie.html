@@ -1,0 +1,56 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Radar Chart</title>
+		<script src="../Chart.js"></script>
+		<script src="../jquery-1.10.2.min.js"></script>
+		<meta name = "viewport" content = "initial-scale = 1, user-scalable = no">
+		<style>
+			canvas{
+			}
+		</style>
+	</head>
+	<body>
+		<canvas id="canvas" height="450" width="450"></canvas>
+
+
+	<script>
+	var votes={};   //votes[meta_value_id]=[userId, userId...]
+	votes[1]=[1,2,3,4];
+	votes[2]=[5,6,7,8];
+
+	usersData[1]={gender:'male',location:'TA'};
+	usersData[2]={gender:'female',location:'haifa'};
+	usersData[3]={gender:'female',location:'jerusalem'};
+	usersData[4]={gender:'male',location:'TA'};
+	usersData[5]={gender:'male',location:'jerusalem'};
+	usersData[6]={gender:'female',location:'haifa'};
+	usersData[7]={gender:'female',location:'jerusalem'};
+	usersData[8]={gender:'male',location:'TA'};
+		
+
+
+		var pieData = [
+				{
+					value: 30,
+					color:"#F38630"
+				},
+				{
+					value : 50,
+					color : "#E0E4CC"
+				},
+				{
+					value : 100,
+					color : "#69D2E7"
+				}
+			
+			];
+
+	var myPie = new Chart(document.getElementById("canvas").getContext("2d")).Pie(pieData);
+	$(function(){
+		console.log('he');
+		console.log(usersData);
+	});
+	</script>
+	</body>
+</html>

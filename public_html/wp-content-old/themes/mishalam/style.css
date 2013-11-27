@@ -1,0 +1,30 @@
+/*
+ Theme Name:     twentythirteen Child Theme
+ Theme URI:      http://www.elegantthemes.com/gallery/foxy/
+ Description:    twentythirteen Child Theme for Mishalam website
+ Author:         ido
+ Author URI:     http://www.sola.co.il
+ Template:       twentythirteen
+ Version:        1.0.0
+*/
+
+@import url("../twentythirteen/style.css");
+
+/* =Theme customization starts here
+------------------------------------------------------- */
+
+
+.component{border: solid 3px red; float: left; margin:5px;}
+.component.clear{clear: both;}
+.component .explanation{color:red;}
+
+
+/*****************************************************/
+
+/* Ido addiions after the indians
+------------------------------------------------------- */
+/*category page*/
+.loopinner2 .imageboxouter.expired {display: none;}
+.loopinner2 .imageboxouter a{text-decoration: none;}
+
+/*****************************************************/

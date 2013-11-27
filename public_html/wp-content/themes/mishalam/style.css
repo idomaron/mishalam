@@ -1,0 +1,119 @@
+/*
+ Theme Name:     twentythirteen Child Theme
+ Theme URI:      http://www.elegantthemes.com/gallery/foxy/
+ Description:    twentythirteen Child Theme for Mishalam website
+ Author:         ido
+ Author URI:     http://www.sola.co.il
+ Template:       twentythirteen
+ Version:        1.0.0
+*/
+
+@import url("../twentythirteen/style.css");
+
+/* =Theme customization starts here
+------------------------------------------------------- */
+
+
+.component{border: solid 3px red; float: left; margin:5px;}
+.component.clear{clear: both;}
+.component .explanation{color:red;}
+
+
+/*****************************************************/
+
+/* Ido addiions after the indians
+------------------------------------------------------- */
+/*Homepage*/
+.marquarea .txt3{float:left; width:80%;}
+.loooparea .imageboxouter:nth-child(n+5){display: none;}
+.entry-content a{text-decoration: none;}
+
+/*category page*/
+.loopinner2 .imageboxouter.expired {display: none;}
+.loopinner2 .imageboxouter a{text-decoration: none;}
+.category-icon-in-question{height: 210px;}
+.category-icon-in-question div{padding-top: 50%; color:#fff; font-size:22px; }
+.profilearea{background-color:transparent; }/*This is correction form the indian...*/
+.innerpage3{background-image:none !important; padding-top: 0 !important;}
+
+/*survey-promo template*/
+.imageboxouter.active .iconarea{background: url('images/icon-survey-active-small.png') no-repeat right bottom; padding: 50px 0 0 50px;}
+.imageboxouter.expired .iconarea{background: url('images/icon-survey-active-small.png') no-repeat right bottom; padding: 50px 0 0 50px;}
+
+/*survey-results*/
+.graparea{float:none !important; clear:both;}
+.type-survey .cyonbox .txt3{font-size: 24px;}
+/*****************************************************/
+
+.innerlist ul li input[type=submit] {
+display: block;
+line-height: 50px;
+padding: 0 24px;
+font-size: 26px;
+color: #ffffff;
+background:none;
+border:none;
+}
+
+.content-index-inner2 .archive-header{
+	width: 475px;
+	height: 178px;
+	text-align: center;
+}
+
+.content-index-inner2 .archive-header img{
+	width: auto;
+	height: 52px;
+	margin: 20px auto 5px auto;
+}
+
+.content-index-inner2 .archive-header h1{
+	font-size: 21px;
+	font-style: normal;
+	color: #fff;
+}
+
+#active_surveys_btn, #survey_results_btn{
+	position: absolute;
+	bottom: 0;
+	width: 50%;
+	height: 60px;
+	line-height: 60px;
+	cursor: pointer;
+	font-size: 27px;
+	font-style: normal;
+	color: #fff;
+	background: rgba(0, 0, 0, 0.12);
+}
+
+#active_surveys_btn{
+	right: 0;
+}
+
+#survey_results_btn{
+	left: 0;
+}
+
+#active_surveys_btn.active, #survey_results_btn.active{
+	background: rgba(0, 0, 0, 0.3);
+}
+
+.toggle_container{
+	min-height: 150px;
+}
+
+#survey_results{
+	display: none;
+}
+/* edit profile form */
+.profilesingleselectbut .buttonareapro {
+	margin-left: 20px;
+}
+/* register form */
+#toPopup2 .buttonareapro {
+	dispaly: block;
+	float: none;
+	clear: both;
+	text-align: center;
+	position: static;
+}
