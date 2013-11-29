@@ -105,8 +105,9 @@
 	$( ".menubtn" ).click(function() {
 	   $( ".navarea" ).slideToggle();
 	});
-	$( ".dropdown_small" ).click(function() {
-	   $( ".droparea_small" ).toggle();
+	$( ".dropdown_small" ).click(function(e) {
+	   $(this).find( ".droparea_small" ).toggle();
+       e.stopPropagation();
 	});
 
 </script>

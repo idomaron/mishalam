@@ -10,14 +10,24 @@
  */
 
 get_header(); ?>
+<?php 
+
+//Get the correct taxonomy ID by slug
+$cat = get_queried_object();
+//Get Taxonomy Meta
+$color = get_tax_meta($cat->term_id,'color_field_id');
+$image = get_tax_meta($cat->term_id,'image_field_id');
+$image = $image['src'];
+?>
 	<div class="maintopsection-inner">
+		<div style="height:10px;margin-bottom:12px; background-color:<?php echo $color;?>;"></div>
 	<div class="content-index-inner2">
-	<div id="primary" class="content-area">
+	<div id="primary" class="content-area category-page">
 		<div id="content" class="site-content" role="main" style="overflow: hidden;">
 
 		
 <script type="text/javascript">
-jQuery(document).ready( function(){
+/*jQuery(document).ready( function(){
 	jQuery('#active_surveys_btn, #survey_results_btn').click( function(){
 		var act_rel = jQuery(this).attr('rel');
 		jQuery('.active').each( function(){
@@ -30,19 +40,8 @@ jQuery(document).ready( function(){
 		});
 		jQuery(act_rel).show();
 	});
-});
+});*/
 </script>
-
-<?php 
-
-//Get the correct taxonomy ID by slug
-$cat = get_queried_object();
-//Get Taxonomy Meta
-$color = get_tax_meta($cat->term_id,'color_field_id');
-$image = get_tax_meta($cat->term_id,'image_field_id');
-$image = $image['src'];
-?>
-
 
 		<?php if ( have_posts() ) : ?>
 			<header class="archive-header" style="background: <?php echo $color; ?> ;">
@@ -80,5 +79,35 @@ $image = $image['src'];
 	</div><!-- #primary -->
 </div>
 </div>
+<script type="text/javascript">
+$(document).ready( function(){
+	$('#active_surveys_btn').click(function(){
+		$(this).addClass('active');
+		$('#survey_results_btn').removeClass('active');
+		$('.expired-survey').removeClass('visible');
+		var arr = [];
+		arr = $('.active-survey');
+		$(arr[0]).addClass('first-visible');
+		$(arr[1]).addClass('second-visible');
+		$('.active-survey').addClass('visible');
+		$('.expired-survey').hide();
+		$('.active-survey').show();
+	});
+	$('#survey_results_btn').click(function(){
+		$(this).addClass('active');
+		$('#active_surveys_btn').removeClass('active');
+		$('.active-survey').removeClass('visible first-visible second-visible');
+		var arr = [];
+		arr = $('.expired-survey');
+		$(arr[0]).addClass('first-visible');
+		$(arr[1]).addClass('second-visible');
+		$('.expired-survey').addClass('visible');
+		$('.active-survey').hide();
+		$('.expired-survey').show();
+	});
+	$('#active_surveys_btn').trigger('click');
+});
+</script>
+
 <?php get_sidebar(); ?>
 <?php get_footer(); ?>

@@ -16,6 +16,13 @@ $image = $image['src'];
 
 //===RESULTS===//
 $answers=GetAnswers();
+
+
+/*echo '<pre>';
+echo the_ID();
+echo 'answers: ';
+var_dump($answers);
+echo '</pre>';*/
 $votes=array();
 $totalVoters=0;
 if($answers){
@@ -26,6 +33,10 @@ if($answers){
         $arrVotes[$answer->meta_id] = UsersVotedToAnswer($answer->meta_id);
         $totalVoters+=count($arrVotes[$answer->meta_id]);
     }
+    /*echo '<pre>';
+    echo 'votes: ';   
+    var_dump($arrVotes);
+    echo '</pre>';*/
 }
 $mostPopVotersNum=0;
 
@@ -38,8 +49,8 @@ foreach ($arrVotes as $metaId => $arrUsers) {
 $percentage=round((count($arrVotes[$mostPopId])/$totalVoters)*100);
 $mostPopAns = $arrAnswers[$mostPopId];
 //finding most popular answer:
-echo '<br/>voters:<br/>';
-var_dump($totalVoters);
+/*echo '<br/>voters:<br/>';
+var_dump($totalVoters);*/
 //Get users meta;
 $arrUsersData=array();
 foreach ($arrVotes as $usersOfAnswer) {
@@ -50,10 +61,10 @@ foreach ($arrVotes as $usersOfAnswer) {
         $arrUsersData[$userId]=$arrUserData;
     }
 }
-
 //THIS WAS COPIED FROM CONTENT.PHP?>
 <div class="innerpage4">
-	<div class="content-index-inner3">
+	<div style="height:10px;margin-bottom:12px; background-color:<?php echo $color;?>;"></div>
+    <div class="content-index-inner3">
         <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
             <div class="component clear">
             	<div class="rightboxinnerresult">
@@ -121,26 +132,19 @@ foreach ($arrVotes as $usersOfAnswer) {
                     <!--<img src="<?php bloginfo( 'template_url' ); ?>/images/graph2.jpg" alt=""/>-->
                     <div class="graph"><canvas id="canvas" height="279" width="477"></canvas></div>
                     <div class="backroundimgarea">
-                    	<div class="dropdown_small">
-                        	<span class="">השכלה</span>
+                    	<div class="dropdown_small" id="user-keys-new">
+                        	<span class="">בחר</span>
                         	<div class="droparea_small">
-                            	<ul>
-                                	<li><a href="#">מין</a></li>
-                                    <li><a href="#">גיל</a></li>
-                                    <li><a href="#">מצב משפחתי</a></li>
-                                    <li><a href="#">השכלה</a></li>
-                                    <li><a href="#">אזור מגורים</a></li>
-                                    <li><a href="#">יליד ישראל</a></li>
-                                    <li><a href="#">דת</a></li>
-                                </ul>
+                            	<ul></ul>
+                            </div>
+                        </div>
+                        <div class="dropdown_small" id="user-values-new">
+                            <span class="">בחר</span>
+                            <div class="droparea_small">
+                                <ul></ul>
                             </div>
                         </div>
                     </div>
-                <select id="user-keys">
-                    <option value="">none</option>
-                </select>
-                <select id="user-values"></select>
-                </div>
                 <div class="imgheaderresult">
                 	<div class="head">אולי יעניין אותך גם:</div>
                
@@ -205,6 +209,23 @@ var usersData=<?php echo json_encode($arrUsersData); ?>;
 
 var answersColors = assignColors();
 var usersMetaKnV = {};
+
+function buildSelectKeyNew(){
+    for(var u in usersData){
+        for (var k in usersData[u]){
+            if(!usersMetaKnV[k]){ 
+                usersMetaKnV[k]=[]; 
+            }
+            if(usersMetaKnV[k].indexOf(usersData[u][k]) > -1){}//do nothing
+            else if(usersData[u][k]){
+                usersMetaKnV[k].push(usersData[u][k]);      
+            }               
+        }       
+    }
+    for(var k in usersMetaKnV){
+        $('#user-keys-new ul').append('<li><a data-value="'+k+'">'+k+'</a></li>');
+    }
+}
 
 function buildSelectKey(){
     for(var u in usersData){
@@ -342,8 +363,9 @@ $(function(){
     
     //Select
     buildSelectKey();
+    buildSelectKeyNew();
     buildChart('pie');
-    $('#user-keys').on('change',function(){
+    /*$('#user-keys').on('change',function(){
         var key = $(this).val();
         console.log(usersMetaKnV);
         $('#user-values').html('');
@@ -352,16 +374,53 @@ $(function(){
             $('#user-values').append('<option value="'+v+'">'+v+'</option>');
             $('#user-values').attr('data-key',key);
         });
+    });*/
+    
+
+    $('#user-keys-new').on('click','li a',function(e){
+        var key = $(this).attr('data-value');
+        $('#user-keys-new > span').html(key);
+        $('#user-values-new ul').html('');
+        $.each(usersMetaKnV[key],function(i,v){
+            $('#user-values-new ul').append('<li><a data-value="'+v+'">'+v+'</a></li>');
+            $('#user-values-new').attr('data-key',key);
+        });
+        $('.droparea_small').hide();
+        $('#user-values-new').show();
+
+        console.log('usersMetaKnV:');
+        console.log(usersMetaKnV);
+
+        e.stopPropagation();
     });
-    $('#user-values').on('change',function(){
+    /*$('#user-values').on('change',function(){
         buildChart(chartType,$(this).attr('data-key'),$(this).val());
+    });*/
+    $('#user-values-new').on('click','li a',function(e){
+        var value=$(this).attr('data-value');
+        $('#user-values-new').attr('data-selected-value',value);
+        $('#user-values-new >span').html(value);
+        buildChart(chartType,$('#user-values-new').attr('data-key'), value);
+        $('.droparea_small').hide();
+        e.stopPropagation();
     });
-    $('#t1,#t2').click(function(){
+    
+    /*$('#t1,#t2').click(function(){
         if(chartType!=$(this).attr('data-chartType')){
             chartType=$(this).attr('data-chartType');
             buildChart(chartType,$('#user-keys').val(),$('#user-values').val());
         }
+    });*/
+    $('#t1,#t2').click(function(){
+        if(chartType!=$(this).attr('data-chartType')){
+            chartType=$(this).attr('data-chartType');
+            buildChart(chartType,$('#user-values-new').attr('data-key'),$('#user-values-new').attr('data-selected-value'));
+        }
     });
+    $('body').click(function(){
+        $('.droparea_small').hide();
+    });
+
 });
 
 $(function(){

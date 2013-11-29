@@ -86,7 +86,35 @@ function isSurveyActive($surveyId){
 	
 	return $status;
 }
+function countDown($surveyId){	
+	$arrLT = get_post_custom_values('survey_lifetime', $surveyId);
+	$hoursLT = intval($arrLT[0]);	
+	
+	$currentTime = time();
+    $postTime = get_post_time('U', true);
+    $lifeTime = $hoursLT*60*60;
 
+    if(($currentTime - $postTime) < $lifeTime){
+    	$status=true;
+    	$age = $currentTime-$postTime;
+    	$countDown= $lifeTime-$age;
+    	
+
+    	$cd_days = (int)($countDown/(60*60*24));
+    	$cd_days_r = $countDown % (60*60*24);
+    	$cd_hours = (int)($cd_days_r/(60*60));
+    	
+    	$cd_hours_r = $cd_days_r % (60*60);
+		$cd_minutes = (int)($cd_hours_r/(60));
+    }
+	else{$status=false;}
+	$arrCountDown=array(
+		'days'=>$cd_days,
+		'hours'=>$cd_hours,
+		'minutes'=>$cd_minutes
+		);
+	return $arrCountDown;
+}
 
 
 

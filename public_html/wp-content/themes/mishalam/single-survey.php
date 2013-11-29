@@ -27,6 +27,15 @@ $daysSincePublihsed = floor(($now - $published)/(60*60*24));
 $lifetime = get_field('survey_lifetime');
 $expired = $daysSincePublihsed > $lifetime;
 
+/*echo '<pre>';
+echo 'a';
+echo isSurveyActive(get_the_ID());
+echo '<br/>';
+echo UserVotedTo(get_the_ID());
+echo '<br/>';
+echo 'user: '.get_current_user_id();
+echo '</pre>';*/
+
 if(isSurveyActive(get_the_ID()) && !UserVotedTo(get_the_ID())){	
 	if(is_user_logged_in()){
 		get_template_part( 'survey', 'question' );

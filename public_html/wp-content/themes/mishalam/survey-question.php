@@ -15,6 +15,8 @@
     $color = get_tax_meta($cat->term_id,'color_field_id');
     $image = get_tax_meta($cat->term_id,'image_field_id');
     $image = $image['src'];
+
+    $arrCountDown=countDown(the_ID());
 ?>
 
 <?php //THIS WAS COPIED FROM CONTENT.PHP?>
@@ -42,7 +44,11 @@
                         <div class="innerlefttop">
                             <div class="retioportion">
                                 <div class="tophead">סיום הסקר והצגת התוצאות בעוד</div>
-                                <div class=""><img src="<?php bloginfo( 'template_url' ); ?>/images/ratioicons.png"></div>
+                                <div class="countdown">
+                                    <div class="number"><?php echo $arrCountDown['minutes']; ?></div>
+                                    <div class="number"><?php echo $arrCountDown['hours']; ?></div>
+                                    <div class="number"><?php echo $arrCountDown['days']; ?></div>
+                                </div>
                             </div>
                             <div class="innertxtportion">
                             	<div class="txtin"><?php the_content();?></div>

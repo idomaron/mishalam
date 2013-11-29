@@ -29,19 +29,33 @@
 .entry-content a{text-decoration: none;}
 
 /*category page*/
+.maintopsection-inner{background: none !important; padding-top:0 !important;}
 .loopinner2 .imageboxouter.expired {display: none;}
 .loopinner2 .imageboxouter a{text-decoration: none;}
 .category-icon-in-question{height: 210px;}
 .category-icon-in-question div{padding-top: 50%; color:#fff; font-size:22px; }
 .profilearea{background-color:transparent; }/*This is correction form the indian...*/
 .innerpage3{background-image:none !important; padding-top: 0 !important;}
+.category-page .imageboxouter.visible.first-visible{top: 0 !important; right: -6.5px !important;position: absolute !important;}
+.category-page .imageboxouter.visible.second-visible{top: 0 !important; left: -6.5px !important;position: absolute !important;}
 
 /*survey-promo template*/
 .imageboxouter.active .iconarea{background: url('images/icon-survey-active-small.png') no-repeat right bottom; padding: 50px 0 0 50px;}
 .imageboxouter.expired .iconarea{background: url('images/icon-survey-active-small.png') no-repeat right bottom; padding: 50px 0 0 50px;}
 
 /*survey-results*/
+.innerpage4{background: none !important; padding-top:0 !important;}
 .graparea{float:none !important; clear:both;}
+.type-survey .cyonbox .txt3{font-size: 24px;}
+.backroundimgarea{height: 279px; padding-bottom: 0 !important;}
+.dropdown_small{text-align: right;}
+#user-values-new{margin-top:12px; display:none;}
+
+/*survey-questions*/
+.countdown{background: url('images/bubbles.png') no-repeat right bottom;width:218px;height: 51px;}
+.countdown .number{float:right; color:#fff; font-size: 16px; padding-top:10px;width:60px; text-align: center;}
+.countdown .number:nth-child(1){margin-left:19px;}
+.countdown .number:nth-child(2){margin-left:19px;}
 .type-survey .cyonbox .txt3{font-size: 24px;}
 /*****************************************************/
 
